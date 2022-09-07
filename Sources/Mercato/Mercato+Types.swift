@@ -14,6 +14,7 @@ public struct Purchase
 	public let product: Product
 	public let transaction: Transaction
 	public let needsFinishTransaction: Bool
+    public let verification: VerificationResult<Transaction>
 }
 
 extension Purchase

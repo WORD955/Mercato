@@ -33,7 +33,7 @@ class PurchaseController
 				await transaction.finish()
 			}
 			
-			return Purchase(product: product, transaction: transaction, needsFinishTransaction: !finishAutomatically)
+			return Purchase(product: product, transaction: transaction, needsFinishTransaction: !finishAutomatically, verification: verification)
 		case .userCancelled:
 			throw MercatoError.purchaseCanceledByUser
 		case .pending:
