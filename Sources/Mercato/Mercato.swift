@@ -1,7 +1,7 @@
 import Foundation
 import StoreKit
 
-public typealias TransactionUpdate = ((Transaction) async -> ())
+public typealias TransactionUpdate = ((Transaction, VerificationResult<Transaction>) async -> ())
 
 public class Mercato {
 	
@@ -29,7 +29,7 @@ public class Mercato {
 						await transaction.finish()
 					}
 					
-					await updateBlock?(transaction)
+					await updateBlock?(transaction, result)
 				} catch {
 					print("Transaction failed verification")
 				}
